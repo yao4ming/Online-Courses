@@ -6,10 +6,10 @@
     <th>Remove</th> 
   </tr>
   <tr ng-repeat="item in foundItems">
-  	<td valign="middle">{{item.name}}</td>
-  	<td valign="middle">{{item.short_name}}</td>
-  	<td valign="middle">{{item.description}}</td>
-  	<td valign="middle"><button ng-click="onRemove({index: $index});">Don't want this one!</button></td>
+  	<td align="center">{{item.name}}</td>
+  	<td align="center">{{item.short_name}}</td>
+  	<td align="center">{{item.description}}</td>
+  	<td align="center"><button ng-click="onRemove({index: $index});">Don't want this one!</button></td>
   </tr>
 </table>
 <div ng-if="foundItems.length == 0">Nothing found</div>
