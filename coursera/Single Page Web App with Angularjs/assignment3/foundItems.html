@@ -1,10 +1,14 @@
 <table style="width:100%">
   <tr>
-    <th>Items Found</th>
+    <th>Item Name</th>
+    <th>Items ShortName</th>
+    <th>Items Description</th>
     <th>Remove</th> 
   </tr>
   <tr ng-repeat="item in foundItems">
-  	<td>{{item.name}},{{item.short_name}},{{item.description}}</td>
+  	<td>{{item.name}}</td>
+  	<td>{{item.short_name}}</td>
+  	<td>{{item.description}}</td>
   	<td><button ng-click="onRemove({index: $index});">Don't want this one!</button></td>
   </tr>
 </table>
