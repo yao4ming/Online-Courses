@@ -6,18 +6,28 @@
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-    .state('/', {
+    .state('home', {
       url: '/',
       templateUrl: './templates/home.html'
     })
     .state('categories', {
       url: '/categories',
-      templateUrl: './templates/categories.html'
+      templateUrl: './templates/categories.html',
+      resolve: {
+        categories: ['MenuDataService', function(MenuDataService) {
+            return MenuDataService.getAllCategories();
+        }]
+      }
     })
-    .state('items', {
-      url: '/items',
-      templateUrl: './templates/items.html'
+    .state('categories.items', {
+      url: '/items/{categoryShortName}',
+      templateUrl: './templates/items.html',
+      resolve: {
+        items: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
+          return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
+        }]
+      }
     })
-  }])
+  }]);
 
 })();

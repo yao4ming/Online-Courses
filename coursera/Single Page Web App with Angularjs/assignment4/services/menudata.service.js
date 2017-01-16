@@ -20,7 +20,7 @@
       return $http({
   			url: ApiBasePath + '/menu_items.json?category=' + categoryShortName
   		}).then(function (result) {
-  		    return foundItems = result.data.menu_items;
+  		    return result.data.menu_items;
   		}, function (error) {
           console.log("http error " + error);
           return {};
