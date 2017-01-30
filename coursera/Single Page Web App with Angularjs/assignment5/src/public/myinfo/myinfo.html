@@ -1,0 +1,38 @@
+<div ng-if="myInfoCtrl.angular.equals(myInfoCtrl.user, {})">
+      Not Signed Up Yet.
+      <a ui-sref="public.signup">Sign up Now!</a>
+</div>
+
+<div ng-if="!myInfoCtrl.angular.equals(myInfoCtrl.user, {})" class="container">
+  <div class="col-md-6">
+    <fieldset>
+      <legend>My Info</legend>
+      <form name='regForm' novalidate>
+
+        <label>First Name</label>
+        <input type="text" name="firstname" class="form-control" ng-model="myInfoCtrl.user.firstName" ng-disabled="true">
+        <br>
+
+        <label>Last Name</label>
+        <input type="text" name="lastname" class="form-control" ng-model="myInfoCtrl.user.lastName" ng-disabled="true">
+        <br>
+
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" ng-model="myInfoCtrl.user.email" ng-disabled="true">
+        <br>
+
+        <label>Phone</label>
+        <input type="text" name="phone" class="form-control" ng-model="myInfoCtrl.user.phone" ng-disabled="true">
+        <br>
+
+        <label>Favorite Menu Number</label>
+        <div>
+          <div>{{myInfoCtrl.user.favMenuItem.short_name}}</div>
+          <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.apiPath}}/images/{{myInfoCtrl.user.favMenuItem.short_name}}.jpg" alt="{{myInfoCtrl.user.favMenuItem.name}}">
+          <div>{{myInfoCtrl.user.favMenuItem.description}}</div>
+        </div>
+
+      </form>
+    </fieldset>
+  </div>
+</div>
