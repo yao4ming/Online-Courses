@@ -144,9 +144,9 @@
       $(window).on('orientationchange', function(event){
         alert("window orientation " + window.orientation);
         if (window.orientation === 90) {
-          rotate(this, -90);
+          rotate(this, 0);
         } else if (window.orientation === -90) {
-          rotate(this, 90);
+          rotate(this, 180);
         }
       });
 
@@ -157,8 +157,6 @@
         styles = {
           transform: transform,
           '-webkit-transform': transform,
-          '-moz-transform': transform,
-          '-o-transform': transform,
         }
 
         $(el).css(styles);
