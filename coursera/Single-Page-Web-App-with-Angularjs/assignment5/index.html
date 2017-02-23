@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="css/restaurant.css">
     <link rel="stylesheet" href="css/common.css">
   </head>
+  <style media="screen">
+    
+  </style>
   <body ng-app="restaurant" ng-strict-di>
 
     <!-- Fixed position loading indicator -->
@@ -144,8 +147,9 @@
       $(window).on('orientationchange', function(event){
         alert("window orientation " + window.orientation);
         var rotate = 0 - window.orientation;
-        setAttribute("transform:rotate("+rotate+"deg);-ms-transform:rotate("+rotate+"deg);-webkit-transform:rotate("+rotate+"deg)", "style");
         alert(rotate);
+        setAttribute("transform:rotate("+rotate+"deg);-ms-transform:rotate("+rotate+"deg);-webkit-transform:rotate("+rotate+"deg)", "style");
+
         // if (window.orientation === 90) {
         //   rotate(this, 0);
         // } else if (window.orientation === -90) {
