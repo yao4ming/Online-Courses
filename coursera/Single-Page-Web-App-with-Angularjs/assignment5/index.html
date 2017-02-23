@@ -143,15 +143,15 @@
 
       $(window).on('orientationchange', function(event){
         alert("window orientation " + window.orientation);
-        if (window.orientation === 90) {
-          rotate(this, 0);
-        } else if (window.orientation === -90) {
-          rotate(this, 180);
-        }
+        // if (window.orientation === 90) {
+        //   rotate(this, 0);
+        // } else if (window.orientation === -90) {
+        //   rotate(this, 180);
+        // }
       });
 
       function rotate(el, degs) {
-        alert("elem: " + el);
+        alert(degs);
         transform = 'rotate('+degs+'deg)';
 
         styles = {
