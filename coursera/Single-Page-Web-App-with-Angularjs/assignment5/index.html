@@ -141,9 +141,8 @@
     <!--Application files -->
     <script type="text/javascript">
 
-      $(window).bind('orientationchange resize', function(event){
-        console.log("rotated");
-        console.log(event.orientation);
+      $(window).on('orientationchange', function(event){
+        alert(event.orientation);
       });
 
       function rotate(el, degs) {
