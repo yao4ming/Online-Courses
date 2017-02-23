@@ -143,8 +143,7 @@
 
       $(window).bind('orientationchange resize', function(event){
         console.log("rotated");
-        console.log(event);
-        console.log(window.orientation);
+        console.log(event.orientation);
       });
 
       function rotate(el, degs) {
