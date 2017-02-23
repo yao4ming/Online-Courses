@@ -139,7 +139,37 @@
     <!-- ADMIN SITE -->
 
     <!--Application files -->
+    <script type="text/javascript">
 
+      $(window).bind('orientationchange resize', function(event){
+        if (event.orientation) {
+          if (event.orientation == 'landscape') {
+            if (window.rotation == 90) {
+              rotate(this, -90);
+            } else {
+              rotate(this, 90);
+            }
+          }
+        }
+      });
+
+      function rotate(el, degs) {
+        console.log("elem: " + el);
+        iedegs = degs/90;
+
+        transform = 'rotate('+degs+'deg)';
+
+        styles = {
+          transform: transform,
+          '-webkit-transform': transform,
+          '-moz-transform': transform,
+          '-o-transform': transform,
+        }
+
+        $(el).css(styles);
+      }
+
+    </script>
   </body>
 
 </html>
