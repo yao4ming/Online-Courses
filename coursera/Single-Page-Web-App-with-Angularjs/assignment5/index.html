@@ -143,6 +143,9 @@
 
       $(window).bind('orientationchange resize', function(event){
         console.log("rotated");
+        console.log(event);
+        console.log(event.orientation);
+        console.log(window.rotation);
         if (event.orientation) {
           if (event.orientation == 'landscape') {
             if (window.rotation == 90) {
