@@ -143,6 +143,11 @@
 
       $(window).on('orientationchange', function(event){
         alert("window orientation " + window.orientation);
+        if (window.orientation === 90) {
+          rotate(this, -90);
+        } else if (window.orientation === -90) {
+          rotate(this, 90);
+        }
       });
 
       function rotate(el, degs) {
