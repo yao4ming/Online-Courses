@@ -145,10 +145,10 @@
     <script type="text/javascript">
       $(window).on('orientationchange', function(event){
         alert("rotated");
-        if (window.matchMedia("(orientation: protrait)").matches) {
-            alert("protrait");
-        } else {
-            alert("landscape");
+        if (window.orientation === 90) {
+         rotate(this, 0);
+        } else if (window.orientation === -90) {
+         rotate(this, 180);
         }
 
         //
@@ -164,17 +164,16 @@
         // }
       });
 
-      // function rotate(el, degs) {
-      //   alert(degs);
-      //   transform = 'rotate('+degs+'deg)';
-      //
-      //   styles = {
-      //     transform: transform,
-      //     '-webkit-transform': transform,
-      //   }
-      //
-      //   $(el).css(styles);
-      // }
+      function rotate(el, degs) {
+        transform = 'rotate('+degs+'deg)';
+        alert(transform);
+        styles = {
+          'transform': transform,
+          '-webkit-transform': transform,
+        }
+
+        $(el).css(styles);
+      }
 
     </script>
   </body>
