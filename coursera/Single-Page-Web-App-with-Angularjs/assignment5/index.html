@@ -145,11 +145,7 @@
     <script type="text/javascript">
       // $(window).on('orientationchange', function(event){
       //   alert("rotated");
-      //   if (window.orientation === 90) {
-      //    rotate(this, 0);
-      //   } else if (window.orientation === -90) {
-      //    rotate(this, 180);
-      //   }
+
       //
       //   //
       //   // alert("window orientation " + window.orientation);
@@ -177,7 +173,13 @@
 
       $(window).bind("orientationchange", function(){
           var orientation = window.orientation;
-          var new_orientation = (orientation) ? 0 : 180 + orientation;
+          if (window.orientation === 90) {
+            alert("protrait 90");
+            new_orientation = -90;
+          } else if (window.orientation === -90) {
+            alert("protrait -90");
+            new_orientation = 90;
+          }
           var transform = "rotate(" + new_orientation + "deg)";
           $('body').css({
               "transform": transform,
