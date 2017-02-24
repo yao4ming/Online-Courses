@@ -143,37 +143,47 @@
 
     <!--Application files -->
     <script type="text/javascript">
-      $(window).on('orientationchange', function(event){
-        alert("rotated");
-        if (window.orientation === 90) {
-         rotate(this, 0);
-        } else if (window.orientation === -90) {
-         rotate(this, 180);
-        }
+      // $(window).on('orientationchange', function(event){
+      //   alert("rotated");
+      //   if (window.orientation === 90) {
+      //    rotate(this, 0);
+      //   } else if (window.orientation === -90) {
+      //    rotate(this, 180);
+      //   }
+      //
+      //   //
+      //   // alert("window orientation " + window.orientation);
+      //   // var rotate = 0 - window.orientation;
+      //   // alert(rotate);
+      //   // setAttribute("transform:rotate("+rotate+"deg);-ms-transform:rotate("+rotate+"deg);-webkit-transform:rotate("+rotate+"deg)", "style");
+      //   //
+      //   // if (window.orientation === 90) {
+      //   //   rotate(this, 0);
+      //   // } else if (window.orientation === -90) {
+      //   //   rotate(this, 180);
+      //   // }
+      // });
+      //
+      // function rotate(el, degs) {
+      //   transform = 'rotate('+degs+'deg)';
+      //   alert(transform);
+      //   styles = {
+      //     'transform': transform,
+      //     '-webkit-transform': transform,
+      //   }
+      //
+      //   $('body').css(styles);
+      // }
 
-        //
-        // alert("window orientation " + window.orientation);
-        // var rotate = 0 - window.orientation;
-        // alert(rotate);
-        // setAttribute("transform:rotate("+rotate+"deg);-ms-transform:rotate("+rotate+"deg);-webkit-transform:rotate("+rotate+"deg)", "style");
-        //
-        // if (window.orientation === 90) {
-        //   rotate(this, 0);
-        // } else if (window.orientation === -90) {
-        //   rotate(this, 180);
-        // }
+      $(window).bind("orientationchange", function(){
+          var orientation = window.orientation;
+          var new_orientation = (orientation) ? 0 : 180 + orientation;
+          var transform = "rotate(" + new_orientation + "deg)";
+          $('body').css({
+              "transform": transform,
+              "-webkit-transform": transform
+          });
       });
-
-      function rotate(el, degs) {
-        transform = 'rotate('+degs+'deg)';
-        alert(transform);
-        styles = {
-          'transform': transform,
-          '-webkit-transform': transform,
-        }
-
-        $('body').css(styles);
-      }
 
     </script>
   </body>
