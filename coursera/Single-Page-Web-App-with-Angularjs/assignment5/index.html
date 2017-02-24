@@ -145,11 +145,11 @@
     <script type="text/javascript">
 
       $(window).on('orientationchange', function(event){
-
+        alert("rotated");
         if (window.matchMedia("(orientation: protrait)").matches) {
-          x.innerHTML = "protrait.";
+          alert("protrait");
       } else {
-          x.innerHTML = "landscape.";
+          alert("landscape");
       }
       //   alert("window orientation " + window.orientation);
       //   var rotate = 0 - window.orientation;
