@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/common.css">
   </head>
   <style media="screen">
-    
+
   </style>
   <body ng-app="restaurant" ng-strict-di>
 
@@ -145,29 +145,35 @@
     <script type="text/javascript">
 
       $(window).on('orientationchange', function(event){
-        alert("window orientation " + window.orientation);
-        var rotate = 0 - window.orientation;
-        alert(rotate);
-        setAttribute("transform:rotate("+rotate+"deg);-ms-transform:rotate("+rotate+"deg);-webkit-transform:rotate("+rotate+"deg)", "style");
 
-        // if (window.orientation === 90) {
-        //   rotate(this, 0);
-        // } else if (window.orientation === -90) {
-        //   rotate(this, 180);
-        // }
-      });
-
-      function rotate(el, degs) {
-        alert(degs);
-        transform = 'rotate('+degs+'deg)';
-
-        styles = {
-          transform: transform,
-          '-webkit-transform': transform,
-        }
-
-        $(el).css(styles);
+        if (window.matchMedia("(orientation: protrait)").matches) {
+          x.innerHTML = "protrait.";
+      } else {
+          x.innerHTML = "landscape.";
       }
+      //   alert("window orientation " + window.orientation);
+      //   var rotate = 0 - window.orientation;
+      //   alert(rotate);
+      //   setAttribute("transform:rotate("+rotate+"deg);-ms-transform:rotate("+rotate+"deg);-webkit-transform:rotate("+rotate+"deg)", "style");
+      //
+      //   // if (window.orientation === 90) {
+      //   //   rotate(this, 0);
+      //   // } else if (window.orientation === -90) {
+      //   //   rotate(this, 180);
+      //   // }
+      // });
+      //
+      // function rotate(el, degs) {
+      //   alert(degs);
+      //   transform = 'rotate('+degs+'deg)';
+      //
+      //   styles = {
+      //     transform: transform,
+      //     '-webkit-transform': transform,
+      //   }
+      //
+      //   $(el).css(styles);
+      // }
 
     </script>
   </body>
