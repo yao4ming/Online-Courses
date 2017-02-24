@@ -143,26 +143,27 @@
 
     <!--Application files -->
     <script type="text/javascript">
-
       $(window).on('orientationchange', function(event){
         alert("rotated");
         if (window.matchMedia("(orientation: protrait)").matches) {
-          alert("protrait");
-      } else {
-          alert("landscape");
-      }
-      //   alert("window orientation " + window.orientation);
-      //   var rotate = 0 - window.orientation;
-      //   alert(rotate);
-      //   setAttribute("transform:rotate("+rotate+"deg);-ms-transform:rotate("+rotate+"deg);-webkit-transform:rotate("+rotate+"deg)", "style");
-      //
-      //   // if (window.orientation === 90) {
-      //   //   rotate(this, 0);
-      //   // } else if (window.orientation === -90) {
-      //   //   rotate(this, 180);
-      //   // }
-      // });
-      //
+            alert("protrait");
+        } else {
+            alert("landscape");
+        }
+
+        //
+        // alert("window orientation " + window.orientation);
+        // var rotate = 0 - window.orientation;
+        // alert(rotate);
+        // setAttribute("transform:rotate("+rotate+"deg);-ms-transform:rotate("+rotate+"deg);-webkit-transform:rotate("+rotate+"deg)", "style");
+        //
+        // if (window.orientation === 90) {
+        //   rotate(this, 0);
+        // } else if (window.orientation === -90) {
+        //   rotate(this, 180);
+        // }
+      });
+
       // function rotate(el, degs) {
       //   alert(degs);
       //   transform = 'rotate('+degs+'deg)';
